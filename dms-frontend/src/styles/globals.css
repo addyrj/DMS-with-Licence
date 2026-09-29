@@ -1,0 +1,133 @@
+/* src/styles/globals.css — Design tokens + reset */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary:        #0FB9A8;
+  --primary-dark:   #0A8F83;
+  --primary-light:  #4ADBCB;
+  --primary-10:     rgba(15,185,168,.10);
+  --primary-20:     rgba(15,185,168,.20);
+
+  --secondary:      #FF9F43;
+  --secondary-dark: #F08A20;
+
+  --success:        #22C55E;
+  --success-10:     rgba(34,197,94,.12);
+  --danger:         #EF4444;
+  --danger-10:      rgba(239,68,68,.12);
+  --warning:        #F59E0B;
+  --warning-10:     rgba(245,158,11,.12);
+
+  --bg-main:        #F6F8FB;
+  --bg-card:        #FFFFFF;
+  --bg-sidebar:     #FFFFFF;
+
+  --text-heading:   #111827;
+  --text-body:      #6B7280;
+  --text-muted:     #9CA3AF;
+  --text-white:     #FFFFFF;
+
+  --border:         #E5E7EB;
+  --border-focus:   #0FB9A8;
+
+  --radius-sm:      10px;
+  --radius-md:      14px;
+  --radius-lg:      20px;
+  --radius-xl:      24px;
+
+  --shadow-sm:      0 2px 10px rgba(0,0,0,.04);
+  --shadow-md:      0 6px 20px rgba(0,0,0,.06);
+  --shadow-lg:      0 12px 40px rgba(0,0,0,.08);
+
+  --sidebar-w:      248px;
+  --header-h:       70px;
+  --transition:     0.18s ease;
+
+  /* Mobile-scaling tokens — desktop values match what already ships, so
+     nothing changes at >480px. Redefined smaller below at <=480px so
+     inline styles/CSS that reference these vars shrink on small phones
+     without needing per-element media queries everywhere. */
+  --fs-h1:      40px;
+  --fs-h2:      32px;
+  --fs-title:   22px;
+  --fs-body:    16px;
+  --fs-small:   14px;
+  --fs-tiny:    12px;
+  --fs-btn:     16px;
+
+  /* Additional exact-value tiers — cover literal fontSize values used
+     across page bodies so they can reference a var (and thus shrink on
+     mobile) without changing their desktop px at all. */
+  --fs-28:      28px;
+  --fs-24:      24px;
+  --fs-20:      20px;
+  --fs-18:      18px;
+  --fs-15:      15px;
+  --fs-13:      13px;
+  --fs-11:      11px;
+  --fs-10:      10px;
+
+  --icon-lg:    40px;
+  --icon-md:    28px;
+  --icon-sm:    20px;
+
+  --space-card:    22px;
+  --space-section: 24px;
+  --gap-card:      16px;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --fs-h1:    28px;
+    --fs-h2:    24px;
+    --fs-title: 18px;
+    --fs-body:  14px;
+    --fs-small: 12px;
+    --fs-tiny:  11px;
+    --fs-btn:   14px;
+
+    --fs-28:    21px;
+    --fs-24:    19px;
+    --fs-20:    16px;
+    --fs-18:    15px;
+    --fs-15:    13px;
+    --fs-13:    11px;
+    --fs-11:    10px;
+    --fs-10:    9px;
+
+    --icon-lg:  26px;
+    --icon-md:  20px;
+    --icon-sm:  16px;
+
+    --space-card:    14px;
+    --space-section: 16px;
+    --gap-card:      10px;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', sans-serif;
+  /* background: var(--bg-main); */
+  color: var(--text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+input, select, textarea { font-family: inherit; }
+img { max-width: 100%; display: block; }
+ul, ol { list-style: none; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+/* Selection */
+::selection { background: var(--primary-20); }
+
+/* Responsive breakpoint tiers live in layout.css (shell/sidebar/header) and
+   components.css (table/modal/grids/login) — kept next to the rules they
+   override so there's one canonical place per concern, not three. */

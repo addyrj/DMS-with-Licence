@@ -1,0 +1,35 @@
+11:42:45 DMS Installer started 09/15/2026 11:42:45
+11:42:45 ERROR: Run as Administrator (right-click START.bat)
+11:42:53 DMS Installer started 09/15/2026 11:42:53
+11:42:53 OK: Running as Administrator
+11:42:54 Internet: OK
+11:42:54 === STEP 0 of 7 : License check ===
+11:42:54 License: deferred to post-Node.js check
+11:42:54 === STEP 1 of 7 : Checking Node.js ===
+11:42:54 OK: Node.js v24 already installed
+11:42:54 OK: node v24.19.0 confirmed
+11:42:55 License: 
+11:42:55 License: ERROR 1146 (42S02) at line 1: Table 'master_db.displays' doesn't exist
+11:42:55 License:   ?  License Valid
+11:42:55 License:       Client   : IOTtech_Dev_Machine
+11:42:55 License:       Expires  : 2036-08-16 (3623 days left)
+11:42:55 License:       Displays : max 50 allowed
+11:42:55 License: 
+11:42:55 === STEP 2 of 7 : Checking MySQL (XAMPP) ===
+11:42:55 OK: XAMPP already installed
+11:42:59 mysqld.exe started directly
+11:42:59 OK: MySQL running
+11:42:59 OK: Apache running - phpMyAdmin: http://localhost/phpmyadmin
+11:42:59 === STEP 3 of 7 : Checking Mosquitto MQTT ===
+11:42:59 OK: Mosquitto already installed
+11:43:03 OK: MQTT running TCP:1883 WS:9001
+11:43:03 === STEP 4 of 7 : Checking config files ===
+11:43:03 OK: backend .env exists
+11:43:03 OK: frontend .env.local exists
+11:43:03 === STEP 5 of 7 : Installing npm packages ===
+11:43:03 OK: Backend packages OK
+11:43:03 OK: Frontend packages OK
+11:43:03 === STEP 6 of 7 : Setting up database ===
+11:43:03 OK: Database already seeded
+11:43:03 === STEP 7 of 7 : Launching DMS ===
+11:43:07 DMS launched OK 09/15/2026 11:43:07

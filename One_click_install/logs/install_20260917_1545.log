@@ -1,0 +1,33 @@
+15:45:05 DMS Installer started 09/17/2026 15:45:05
+15:45:05 OK: Running as Administrator
+15:45:06 Internet: OK
+15:45:06 === STEP 0 of 7 : License check ===
+15:45:06 License: deferred to post-Node.js check
+15:45:06 === STEP 1 of 7 : Checking Node.js ===
+15:45:06 OK: Node.js v24 already installed
+15:45:06 OK: node v24.19.0 confirmed
+15:45:11 License: 
+15:45:11 License: ERROR 2002 (HY000): Can't connect to MySQL server on 'localhost' (10061)
+15:45:11 License:   ?  License Valid
+15:45:11 License:       Client   : iot_tech
+15:45:11 License:       Expires  : 2027-09-15 (363 days left)
+15:45:11 License:       Displays : max 15 allowed
+15:45:11 License: 
+15:45:11 === STEP 2 of 7 : Checking MySQL (XAMPP) ===
+15:45:11 OK: XAMPP already installed
+15:45:15 mysqld.exe started directly
+15:46:26 WARN: MySQL not responding. Opening XAMPP Control Panel...
+15:46:53 OK: Apache running - phpMyAdmin: http://localhost/phpmyadmin
+15:46:53 === STEP 3 of 7 : Checking Mosquitto MQTT ===
+15:46:53 OK: Mosquitto already installed
+15:46:57 OK: MQTT running TCP:1883 WS:9001
+15:46:57 === STEP 4 of 7 : Checking config files ===
+15:46:58 OK: backend .env exists
+15:46:58 OK: frontend .env.local exists
+15:46:58 === STEP 5 of 7 : Installing npm packages ===
+15:46:58 OK: Backend packages OK
+15:46:58 OK: Frontend packages OK
+15:46:58 === STEP 6 of 7 : Setting up database ===
+15:46:58 OK: Database already seeded
+15:46:58 === STEP 7 of 7 : Launching DMS ===
+15:47:02 DMS launched OK 09/17/2026 15:47:02

@@ -1,0 +1,218 @@
+
+/* src/styles/layout.css */
+
+html {
+  height: 100%;
+  background: #0FB9A8;
+}
+body {
+  min-height: 100%;
+  background: #0FB9A8 !important;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  grid-template-rows: var(--header-h) 1fr;
+  height: calc(100vh - 32px);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.20);
+  background: white;
+}
+
+.sidebar {
+  grid-row: 1 / -1;
+  background: white;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+  overflow-y: auto;
+  height: 100%;
+}
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+.sidebar__logo-icon {
+  width: 38px; height: 38px;
+  background: var(--primary);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.sidebar__logo-name {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-heading);
+}
+.sidebar__section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text-muted);
+  padding: 0 12px;
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+.sidebar__nav { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-body);
+  transition: all var(--transition);
+}
+.sidebar__item:hover { background: var(--bg-main); color: var(--text-heading); }
+.sidebar__item--active { background: var(--primary); color: white; }
+.sidebar__item--active:hover { background: var(--primary-dark); color: white; }
+.sidebar__item svg { flex-shrink: 0; }
+.sidebar__footer {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+  flex-shrink: 0;
+}
+.sidebar__promo {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  border-radius: var(--radius-md);
+  padding: 16px;
+  color: white;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+.sidebar__promo h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+
+.app-header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  z-index: 10;
+}
+.app-header__greeting h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-heading);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.app-header__greeting p { font-size: 13px; color: var(--text-muted); }
+.app-header__actions { display: flex; align-items: center; gap: 12px; }
+.app-header__icon-btn {
+  width: 40px; height: 40px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-body);
+  background: transparent;
+  position: relative;
+  transition: all var(--transition);
+}
+.app-header__icon-btn:hover { border-color: var(--primary); color: var(--primary); }
+.notification-dot {
+  position: absolute;
+  top: 6px; right: 6px;
+  width: 8px; height: 8px;
+  background: var(--danger);
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.app-header__avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--primary-10);
+  border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--primary);
+  cursor: pointer;
+}
+.app-header__search { height: 40px; padding: 0 14px; }
+.app-header__search input { font-size: 13px; }
+.app-header__user-avatar { width: 30px; height: 30px; font-size: 13px; }
+
+.page-main {
+  background: var(--bg-main);
+  padding: 28px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.page-header h2 {
+  font-size: var(--fs-title);
+  font-weight: 700;
+  color: var(--text-heading);
+}
+.page-header p { font-size: var(--fs-small); color: var(--text-muted); margin-top: 2px; }
+
+/* Tablet / small laptop — shell stays two-column (sidebar fixed-width +
+   fluid content already flexes fine down to 768px), so no shell change
+   needed here; grid components that need it are handled in components.css. */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .page-main { padding: 22px; }
+  .sidebar__logo-icon     { width: 32px; height: 32px; font-size: var(--fs-small); }
+  .sidebar__logo-name     { font-size: var(--fs-small); }
+  .sidebar__item          { padding: 9px 10px; font-size: var(--fs-small); }
+  .sidebar__section-label { font-size: 10px; }
+}
+
+@media (max-width: 768px) {
+  body { padding: 8px; }
+  .app-shell {
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--header-h) 1fr;
+    height: calc(100vh - 16px);
+    border-radius: var(--radius-lg);
+  }
+  .sidebar { display: none !important; }
+  .app-header { padding: 0 16px; }
+  .app-header__greeting h1 { font-size: 16px; }
+  .app-header__greeting p { display: none; }
+  .page-main { padding: 16px; max-height: calc(100vh - var(--header-h)); }
+}
+
+/* Small/standard/iPhone/large mobile (320–480px) — reclaim edge padding */
+@media (max-width: 480px) {
+  body { padding: 4px; }
+  .app-shell { height: calc(100vh - 8px); border-radius: var(--radius-md); }
+  .app-header { padding: 0 12px; gap: 8px; }
+  .page-main { padding: 12px; }
+
+  /* Header chrome — shrink to feel sized for a phone, and drop the
+     username/role text (avatar alone is enough at this width). */
+  .app-header__icon-btn      { width: 34px; height: 34px; }
+  .app-header__icon-btn svg  { width: var(--icon-sm); height: var(--icon-sm); }
+  .app-header__search        { height: 34px; padding: 0 10px; gap: 6px; }
+  .app-header__search input  { font-size: var(--fs-tiny); }
+  .app-header__search svg    { width: var(--icon-sm); height: var(--icon-sm); }
+  .app-header__user-avatar   { width: 26px; height: 26px; font-size: var(--fs-tiny); }
+  .app-header__user-text     { display: none; }
+}
